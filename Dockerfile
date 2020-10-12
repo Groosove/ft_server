@@ -6,7 +6,7 @@
 #    By: flavon <flavon@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/15 19:33:09 by flavon            #+#    #+#              #
-#    Updated: 2020/08/17 19:19:28 by flavon           ###   ########.fr        #
+#    Updated: 2020/10/12 10:10:42 by flavon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,8 +48,8 @@ RUN ln -s /etc/nginx/sites-avaliable/nginx.conf /etc/nginx/sites-enabled/
 
 # WordPress
 RUN wget https://wordpress.org/latest.tar.gz 
-RUN tar -xzvf latest.tar.gz -C /var/www/ 
-RUN mv root/wp-config.php /var/www/html/wordpress
+RUN tar -xzvf latest.tar.gz -C /var/www/
+RUN mv root/wp-config.php /var/www/wordpress/
 RUN chown -R www-data:www-data /var/www/phpMyAdmin
 
 # MySQL
