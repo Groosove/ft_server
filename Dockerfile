@@ -19,8 +19,9 @@ EXPOSE 80 443
 # SRCS
 COPY srcs/wp-config.php ./root/
 COPY srcs/start.sh ./root/
-# COPY srcs/nginx.conf ./root/
+COPY srcs/nginx.conf ./root/
 COPY srcs/config.inc.php ./root/
+COPY srcs/start_off_autoindex.sh ./root/
 
 # Install utilites
 RUN apt-get -y update
@@ -57,7 +58,6 @@ COPY /srcs/mysql.mysql /var/
 RUN service mysql start && mysql -u root mysql < /var/mysql.mysql
 
 # Start nginx
-
 RUN service nginx start && service php7.3-fpm start
 
 # Start script
